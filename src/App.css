@@ -1,0 +1,96 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Reset any potential colored overlays */
+body::before,
+body::after,
+#root::before,
+#root::after,
+div::before,
+div::after {
+  content: none !important;
+  background: none !important;
+}
+
+/* Make the canvas fill the entire screen without any margins */
+canvas {
+  display: block !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  touch-action: none;
+  background: white !important;
+  /* Remove any filter that could be causing tinting */
+  filter: none !important;
+}
+
+/* Ensure no canvas element has any filter, background-color, or blend mode */
+canvas, .canvas-container, #canvas-container, .canvas-wrapper, #canvas-wrapper {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  background: white !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Remove any potential glare or overlay that could cause tinting */
+.overlay, .glare, .tint, .filter, .effect {
+  display: none !important;
+}
+
+/* Override any potential colored background */
+.canvas-container,
+#root,
+[data-testid="canvas-container"],
+.root-container,
+.app-container {
+  background: white !important;
+  filter: none !important;
+}
+
+/* Cursor styles for interactive elements */
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Make sure the UI overlay doesn't interfere with canvas interaction */
+.ui-overlay {
+  pointer-events: none;
+}
+
+.ui-overlay button {
+  pointer-events: auto;
+}
+
+/* Ensure there are no unwanted borders or margins */
+#root, main, div {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+/* Canvas specific reset styles to prevent tinting */
+#root > div > canvas {
+  background: white !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
