@@ -12,7 +12,11 @@ export default function LabEnvironment({ position = [0, 0, 0] }) {
 
     // Clean up previous children
     while(labRef.current.children.length > 0) {
-      labRef.current.remove(labRef.current.children[0]);
+      // Only remove children that are not exploded parts (they have a special userData flag)
+      const child = labRef.current.children[0];
+      if (!child.userData?.isExplodedPart) {
+        labRef.current.remove(child);
+      }
     }
 
     // Clone the lab scene for safe modifications
@@ -68,6 +72,9 @@ export default function LabEnvironment({ position = [0, 0, 0] }) {
     });
 
     labRef.current.add(labClone);
+    
+    // Add name to the lab for easy reference from other components
+    labRef.current.name = 'LabEnvironment';
   }, [labScene, position]);
 
   return <group ref={labRef} />;

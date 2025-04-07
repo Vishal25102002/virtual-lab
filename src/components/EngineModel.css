@@ -1,0 +1,157 @@
+/* EngineModel.css */
+/* Aesthetic styling for engine viewer and part information */
+
+/* Part Number Markers */
+.part-number-marker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 80, 255, 0.8);
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+  }
+  
+  .part-number-marker:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    background-color: rgba(0, 120, 255, 1);
+  }
+  
+  /* Engine Viewer Overlay */
+  .engine-viewer-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Part Information Card */
+  .engine-part-info {
+    pointer-events: auto;
+    width: 320px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px 0 0 12px;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    margin-right: 0;
+    padding: 0;
+    color: #333;
+    backdrop-filter: blur(10px);
+    border-left: 4px solid #0055ff;
+  }
+  
+  /* Card Header */
+  .part-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(90deg, #0055ff, #0088ff);
+    border-radius: 8px 0 0 0;
+  }
+  
+  .part-info-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  
+  .close-button {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+  }
+  
+  .close-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Card Content */
+  .part-info-content {
+    padding: 20px;
+  }
+  
+  .info-section {
+    margin-bottom: 20px;
+  }
+  
+  .info-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #0055ff;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 85, 255, 0.2);
+    padding-bottom: 5px;
+  }
+  
+  .info-section p {
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  /* Split Button */
+  .split-button {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #0055ff, #0088ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 85, 255, 0.25);
+  }
+  
+  .split-button:hover {
+    box-shadow: 0 6px 15px rgba(0, 85, 255, 0.35);
+  }
+  
+  .split-button.active {
+    background: linear-gradient(90deg, #ff5500, #ff8800);
+    box-shadow: 0 4px 12px rgba(255, 85, 0, 0.25);
+  }
+  
+  .split-button.active:hover {
+    box-shadow: 0 6px 15px rgba(255, 85, 0, 0.35);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .engine-part-info {
+      width: 280px;
+    }
+    
+    .part-info-header h2 {
+      font-size: 1.2rem;
+    }
+  }
